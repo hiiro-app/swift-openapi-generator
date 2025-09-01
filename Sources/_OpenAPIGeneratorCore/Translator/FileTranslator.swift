@@ -64,7 +64,8 @@ struct OverridableSafeNameGenerator: SafeNameGenerator {
     }
 
     func swiftContentTypeName(for contentType: ContentType) -> String {
-        upstream.swiftContentTypeName(for: contentType)
+        if let override = overrides[contentType.lowercasedTypeSubtypeAndParameters] { return override }
+        return upstream.swiftContentTypeName(for: contentType)
     }
 }
 

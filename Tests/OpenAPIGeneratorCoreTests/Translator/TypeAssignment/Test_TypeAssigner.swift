@@ -112,6 +112,7 @@ class Test_TypeAssigner: Test_Core {
 
             // Short names.
             ("application/json", "json", "json"),
+            ("application/json; version=1.0", "json", "json"),
             ("application/x-www-form-urlencoded", "urlEncodedForm", "urlEncodedForm"),
             ("multipart/form-data", "multipartForm", "multipartForm"), ("text/plain", "plainText", "plainText"),
             ("*/*", "any", "any"), ("application/xml", "xml", "xml"), ("application/octet-stream", "binary", "binary"),

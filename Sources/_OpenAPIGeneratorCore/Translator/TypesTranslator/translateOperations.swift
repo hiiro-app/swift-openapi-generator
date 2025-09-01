@@ -194,7 +194,7 @@ extension TypesFileTranslator {
         let cases: [(caseName: String, rawExpr: LiteralDescription)] = contentTypes.map { contentType in
             (
                 context.safeNameGenerator.swiftContentTypeName(for: contentType),
-                .string(contentType.lowercasedTypeAndSubtype)
+                .string(contentType.lowercasedTypeSubtypeAndParameters)
             )
         }
         return try translateRawRepresentableEnum(

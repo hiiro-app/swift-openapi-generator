@@ -39,7 +39,7 @@ extension SafeNameGenerator {
     /// - Returns: A Swift identifer for the content type, or nil if the provided content type doesn't
     ///   have an override.
     func swiftNameOverride(for contentType: ContentType) -> String? {
-        let rawContentType = contentType.lowercasedTypeSubtypeAndParameters
+        let rawContentType = contentType.lowercasedTypeAndSubtype
         switch rawContentType {
         case "application/json": return "json"
         case "application/x-www-form-urlencoded": return "urlEncodedForm"
